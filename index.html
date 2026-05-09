@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopix</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- links -->
+ <link rel="stylesheet" href="style.css">
+<script src="style.js"></script>
+</head>
+
+<body>
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+<div class="container-fluid">
+
+<a class="navbar-brand" href="#">
+Shopix
+</a>
+
+<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto align-items-center">
+
+<li class="nav-item">
+<a class="nav-link" href="#home">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#categories">Categories</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#products">Products</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+<li class="nav-item ms-3">
+
+<div class="cart-btn" onclick="toggleCart()">
+
+<i class="fa-solid fa-bag-shopping"></i>
+
+<span id="cart-count">0</span>
+
+</div>
+
+</li>
+
+<li class="nav-item ms-3">
+
+<button class="toggle-btn" onclick="toggleMode()">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero container-fluid" id="home">
+
+<div class="row align-items-center w-100">
+
+<div class="col-lg-6 hero-text">
+
+<h1>
+WEAR THE <br>
+FUTURE
+</h1>
+
+<p>
+Modern streetwear and premium fashion designed
+for people who want confidence, comfort and style.
+</p>
+
+<div class="hero-buttons">
+
+<button class="shop-btn" onclick="scrollProducts()">
+Shop Now
+</button>
+
+</div>
+
+</div>
+
+<div class="col-lg-6 hero-image">
+
+<img id="shoe" src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5813.png">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CATEGORIES -->
+  
+<!-- CATEGORIES -->
+
+<section class="container py-5" id="categories">
+
+<div class="section-title">
+<h2>Shop Categories</h2>
+</div>
+
+<div class="row g-4 text-center">
+
+<div class="col-md-3">
+<div class="category-card" onclick="openCategory('sneaker')">
+<i class="fa-solid fa-shoe-prints"></i>
+<h4>Sneakers</h4>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="category-card" onclick="openCategory('hoodie')">
+<i class="fa-solid fa-shirt"></i>
+<h4>Hoodies</h4>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="category-card" onclick="openCategory('watch')">
+<i class="fa-solid fa-clock"></i>
+<h4>Watches</h4>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="category-card" onclick="openCategory('bag')">
+<i class="fa-solid fa-briefcase"></i>
+<h4>Bags</h4>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CATEGORY PAGE OVERLAY -->
+
+<div class="category-page" id="categoryPage">
+
+  <div class="category-header">
+
+    <h2 id="categoryTitle">Category</h2>
+
+    <button onclick="closeCategory()">✕</button>
+
+  </div>
+
+  <div class="category-products" id="categoryProducts"></div>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+
+<div class="section-title">
+<h2>Featured Products</h2>
+</div>
+
+<div class="carousel">
+
+<div class="carousel-track">
+
+<!-- SNEAKERS (4) -->
+<div class="product-card" data-category="sneaker">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Nike Air Max</h5>
+<p class="price">$120</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card" data-category="sneaker">
+<img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Classic White Sneaker</h5>
+<p class="price">$99</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<!-- HOODIES (4) -->
+<div class="product-card" data-category="hoodie">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Street Hoodie Black</h5>
+<p class="price">$70</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card" data-category="hoodie">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Oversized Hoodie</h5>
+<p class="price">$85</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card" data-category="hoodie">
+<img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Grey Minimal Hoodie</h5>
+<p class="price">$75</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card" data-category="hoodie">
+<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Premium Zip Hoodie</h5>
+<p class="price">$95</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<!-- WATCHES (3) -->
+<div class="product-card" data-category="watch">
+<img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Luxury Watch</h5>
+<p class="price">$220</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card" data-category="watch">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Modern Black Watch</h5>
+<p class="price">$199</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<!-- BAGS (4) -->
+<div class="product-card" data-category="bag">
+<img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Leather Bag</h5>
+<p class="price">$90</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card" data-category="bag">
+<img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Travel Backpack</h5>
+<p class="price">$100</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card" data-category="bag">
+<img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1200&auto=format&fit=crop">
+<div class="product-info">
+<h5>Urban Backpack</h5>
+<p class="price">$110</p>
+<button class="add-btn">Add To Cart</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY US / ABOUT SECTION -->
+
+<section class="why-us container" id="about">
+
+  <div class="section-title">
+    <h2>Why Choose Us</h2>
+  </div>
+
+  <div class="row g-4">
+
+    <!-- FAST DELIVERY -->
+    <div class="col-md-4">
+      <div class="feature-box">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h4>Fast Delivery</h4>
+        <p>
+          Quick and safe worldwide shipping with premium packaging and tracking support.
+        </p>
+      </div>
+    </div>
+
+    <!-- PREMIUM QUALITY -->
+    <div class="col-md-4">
+      <div class="feature-box">
+        <i class="fa-solid fa-shield-heart"></i>
+        <h4>Premium Quality</h4>
+        <p>
+          High-end fashion products designed for comfort, durability, and modern style.
+        </p>
+      </div>
+    </div>
+
+    <!-- SECURE PAYMENT -->
+    <div class="col-md-4">
+      <div class="feature-box">
+        <i class="fa-solid fa-credit-card"></i>
+        <h4>Secure Payment</h4>
+        <p>
+          Safe checkout system with encrypted transactions and trusted payment methods.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact" id="contact">
+
+  <div class="section-title">
+    <h2>Contact Us</h2>
+  </div>
+
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- INFO BOX -->
+      <div class="col-md-5">
+
+        <div class="contact-info">
+
+          <h3>Let’s talk 👋</h3>
+
+          <p>
+            If you have questions about products, orders or support — we are here to help you anytime.
+          </p>
+
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>support@shopix.com</span>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+93 799 000 000</span>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Online Store Worldwide</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+      <div class="col-md-7">
+
+        <form class="contact-form">
+
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <input type="text" placeholder="Your Name">
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" placeholder="Your Email">
+            </div>
+
+            <div class="col-12">
+              <input type="text" placeholder="Subject">
+            </div>
+
+            <div class="col-12">
+              <textarea rows="5" placeholder="Your Message"></textarea>
+            </div>
+
+            <div class="col-12">
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ <!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <!-- BRAND -->
+      <div class="col-md-4">
+
+        <h3 class="footer-logo">Shopix</h3>
+
+        <p class="footer-text">
+          Modern fashion ecommerce built for premium streetwear lovers.
+          Style. Comfort. Future.
+        </p>
+
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="col-md-4">
+
+        <h5 class="footer-title">Quick Links</h5>
+
+        <ul class="footer-links">
+
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="col-md-4">
+
+        <h5 class="footer-title">Follow Us</h5>
+
+        <div class="social-icons">
+
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-tiktok"></i>
+
+        </div>
+
+        <p class="footer-small">
+          Stay connected for new drops & offers.
+        </p>
+
+      </div>
+
+    </div>
+
+    <hr class="footer-line">
+
+    <p class="footer-bottom">
+      © 2026 Shopix. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- CART -->
+
+<div class="cart-sidebar" id="cartSidebar">
+
+<div class="cart-header">
+
+<h3>Your Cart</h3>
+
+<div class="close-cart" onclick="toggleCart()">
+&times;
+</div>
+
+</div>
+
+<div id="cart-items"></div>
+
+<div class="total-section">
+
+<h4>
+Total: $<span id="cart-total">0</span>
+</h4>
+
+<button class="checkout-btn" onclick="openCheckout()">
+Checkout
+</button>
+
+</div>
+
+</div>
+
+<!-- CHECKOUT -->
+
+<div class="checkout-modal" id="checkoutModal">
+
+<div class="checkout-box">
+
+<h2>Payment Details</h2>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="Shipping Address">
+
+<input type="text" placeholder="Card Number">
+
+<input type="text" placeholder="MM / YY">
+
+<input type="text" placeholder="CVV">
+
+<button class="pay-btn" onclick="completePayment()">
+Pay Now
+</button>
+
+<button class="cancel-btn" onclick="closeCheckout()">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+
+<!-- JS -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
